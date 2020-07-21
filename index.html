@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <main class="container">
+        <div class="main-section">
+            <button class="btn-toggle-collapse" data-target="config-section">显示/隐藏配置</button>
+        </div>
+        <div class="main-section collapse-target" id="config-section">
+            <ul id="config-container"></ul>
+            <button class="btn-show-dialog" data-target="diag-tnt-config">添加TNT配置</button>
+            <button class="btn-show-dialog" data-target="diag-pearl-config">添加珍珠配置</button>
+        </div>
+        <div class="main-section">
+            <ul id="result-container"></ul>
+            <div class="popup-container">
+                <button class="btn-compute">新建算例</button>
+                <ul>
+                    <li id="btn-compute-pearl-trajectory">珍珠轨迹计算</li>
+                    <li id="btn-compute-tnt">TNT用量计算</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <div class="alert-container">
+        <span id="alert-message"></span>
+    </div>
+    <div id="modal-overlay">
+        <div id="modal-back"></div>
+        <div class="dialog" id="diag-tnt-config" data-type="tnt-config">
+            <div class="dialog-inner">
+                <div class="title">新建TNT配置</div>
+                <div class="content">
+                    <input data-prop-name="name" data-check="name" type="text" placeholder="名称"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="subtitle">
+                    一号TNT位置
+                </div>
+                <div class="content">
+                    <input data-prop-name="x1" data-check="number" type="text" placeholder="x"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="y1" data-check="number" type="text" placeholder="y"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="z1" data-check="number" type="text" placeholder="z"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="subtitle">
+                    二号TNT位置
+                </div>
+                <div class="content">
+                    <input data-prop-name="x2" data-check="number" type="text" placeholder="x"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="y2" data-check="number" type="text" placeholder="y"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="z2" data-check="number" type="text" placeholder="z"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="footer">
+                    <button class="btn-dialog-confirm">确定</button>
+                    <button class="btn-dialog-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div class="dialog" id="diag-pearl-config" data-type="pearl-config">
+            <div class="dialog-inner">
+                <div class="title">新建珍珠配置</div>
+                <div class="content">
+                    <input data-prop-name="name" data-check="name" type="text" placeholder="名称"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="subtitle">
+                    珍珠位置
+                </div>
+                <div class="content">
+                    <input data-prop-name="x" data-check="number" type="text" placeholder="x"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="y" data-check="number" type="text" placeholder="y"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="z" data-check="number" type="text" placeholder="z"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="subtitle">
+                    珍珠速度
+                </div>
+                <div class="content">
+                    <input data-prop-name="vx" data-check="number" type="text" placeholder="x"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="vy" data-check="number" type="text" placeholder="y"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="content">
+                    <input data-prop-name="vz" data-check="number" type="text" placeholder="z"/>
+                    <span class="error-msg"></span>
+                </div>
+                <div class="footer">
+                    <button class="btn-dialog-confirm">确定</button>
+                    <button class="btn-dialog-close">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="pearl.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
