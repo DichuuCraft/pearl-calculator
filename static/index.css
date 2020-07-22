@@ -7,8 +7,8 @@
 body {
     background-color: #eee;
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 20px;
     margin: 0;
+    padding: 0;
     color: #222;
 }
 
@@ -25,19 +25,40 @@ input {
     display: none;
 }
 
+main.container {
+    padding-top: 20px;
+    min-height: 100vh;
+}
 .main-section {
     padding: 0px 200px 20px;
     background-color: #eee;
 }
-
+footer {
+    padding: 20px 200px 20px;
+    background-color: #222;
+    color: #eee;
+    border-top: #11a solid 1px;
+    margin: 0;
+}
+footer:before, footer:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 @media(max-width: 984px){
     .main-section {
         padding: 0px 50px 20px;
+    }
+    footer {
+        padding: 20px 50px 20px;
     }
 }
 @media(max-width: 447px){
     .main-section {
         padding: 0px 10px 10px;
+    }
+    footer {
+        padding: 20px 10px 20px;
     }
 }
 
@@ -114,7 +135,7 @@ button:hover {
     display: inline-block;
     text-align: left;
     background-color: #eee;
-    padding: 0 40px 40px;
+    padding: 0 40px 20px;
     border-radius: 8px;
 }
 .dialog .title {
@@ -124,6 +145,9 @@ button:hover {
 }
 .dialog .content {
     padding: 5px 5px;
+}
+.dialog .footer {
+    padding-top: 10px;
 }
 .dialog input[type="text"]{
     padding: 5px;
@@ -213,11 +237,11 @@ button:hover {
     position: absolute;
     box-shadow: 1px 1px 2px 2px #999;
     list-style: none;
-    visibility: hidden;
+    display: none;
     background-color: #eee;
 }
 .popup-container ul.show {
-    visibility: visible;
+    display: block;
 }
 .popup-container li {
     padding: 20px;
@@ -280,8 +304,48 @@ button:hover {
 #result-container .result {
     padding-top: 10px;
 }
+#result-container .result .info {
+    padding: 10px;
+    text-align: center;
+}
+#result-container .result .info span {
+    font-style: italic;
+    color: #85a;
+}
 .result .placeholder {
     text-align: center;
     font-style: italic;
     color: #999;
+}
+@media(max-width: 500px){
+    .github-fork-ribbon {
+        display: none;
+    }
+}
+.float-btn-container {
+    position: fixed;
+    bottom: 120px;
+    width: 100%;
+}
+.float-btn-container button {
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+.float-btn-container ul {
+    left: 120px;
+    bottom: 0px;
+}
+.btn-plus {
+    height: 50px;
+    width: 50px;
+    line-height: 25px;
+    font-size: 35px;
+    border-radius: 50%;
+    color: #eee;
+    border: 0;
+    background-color: #5a5;
+}
+.btn-plus:hover {
+    background-color: #aaa;
 }

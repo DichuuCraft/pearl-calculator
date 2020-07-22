@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>末影珍珠计算器</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 </head>
 <body>
     <main class="container">
@@ -18,21 +19,25 @@
         </div>
         <div class="main-section">
             <ul id="result-container"></ul>
-            <div class="popup-container">
-                <button class="btn-compute">新建算例</button>
-                <ul>
-                    <li id="btn-compute-pearl-trajectory">珍珠轨迹计算</li>
-                    <li id="btn-compute-tnt">TNT用量计算</li>
-                </ul>
-            </div>
+            
         </div>
     </main>
+    <footer>
+        Written by hadroncfy as part of the Pearl Canon project of DichuuCraft.
+    </footer>
+    <div class="float-btn-container popup-container">
+        <button class="btn-new-compute btn-plus">+</button>
+        <ul>
+            <li class="btn-compute" data-type="pearl-trajectory">珍珠轨迹计算</li>
+            <li class="btn-compute" data-type="tnt-amount">TNT用量计算</li>
+        </ul>
+    </div>
     <div class="alert-container">
         <span id="alert-message"></span>
     </div>
     <div id="modal-overlay">
         <div id="modal-back"></div>
-        <div class="dialog" id="diag-tnt-config" data-type="tnt-config">
+        <div class="dialog dialog-input" id="diag-tnt-config" data-type="tnt-config">
             <div class="dialog-inner">
                 <div class="title">新建TNT配置</div>
                 <div class="content">
@@ -75,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="dialog" id="diag-pearl-config" data-type="pearl-config">
+        <div class="dialog dialog-input" id="diag-pearl-config" data-type="pearl-config">
             <div class="dialog-inner">
                 <div class="title">新建珍珠配置</div>
                 <div class="content">
@@ -118,8 +123,18 @@
                 </div>
             </div>
         </div>
+        <div class="dialog" id="dialog-alert">
+            <div class="dialog-inner">
+                <div class="title">注意</div>
+                <div class="content alert-msg"></div>
+                <div class="footer">
+                    <button class="btn-dialog-confirm">确定</button>
+                    <button class="btn-dialog-close">取消</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="pearl.js"></script>
     <script src="index.js"></script>
+    <a class="github-fork-ribbon" href="https://github.com/DichuuCraft/pearl-calculator" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 </body>
 </html>
