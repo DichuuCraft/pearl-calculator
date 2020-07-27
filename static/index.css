@@ -19,10 +19,15 @@ ul {
 
 input {
     outline-style: none;
+    border-radius: 0;
 }
 
 .hidden {
     display: none;
+}
+
+button {
+    margin: 0;
 }
 
 main.container {
@@ -151,6 +156,7 @@ button:hover {
 }
 .dialog input[type="text"]{
     padding: 5px;
+    border: #fff solid 2px;
 }
 .dialog input[type="text"].error{
     padding: 5px;

@@ -15,11 +15,11 @@ export default {
         var tnt = fromTntConfig(world, pearl, tntConfig);
 
         var v0 = tnt.getInitialVelocity(inputs.n1, inputs.n2);
-        var traj = world.createPearlTrajectory(pearl.r0, v0.add(pearl.v0));
+        var traj = world.createPearlTrajectory(pearl.r0, v0);
         var resultTable = [
             ['游戏刻', '速度', '位置', '区块位置']
         ];
-        for (var i = 1; i <= inputs.ticks; i++){
+        for (var i = 0; i <= inputs.ticks; i++){
             var v = traj.getVelocity(i), pos = traj.getPosition(i);
             resultTable.push([i, v, pos, [pos.x >> 4, pos.z >> 4]]);
         }

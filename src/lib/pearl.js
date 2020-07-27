@@ -171,7 +171,7 @@ TNTLauncher.prototype.getInitialVelocity = function(n1, n2){
     var rG = r0.add(new Vec3(0, this.world.pearlEyesHeight, 0));
     var v1 = this.pos1.unitVecTo(rG).multiply(n1 * (1 - r0.distance(this.pos1) / r));
     var v2 = this.pos2.unitVecTo(rG).multiply(n2 * (1 - r0.distance(this.pos2) / r));
-    return v1.add(v2);
+    return v1.add(v2).add(this.pearl.v0);
 }
 /**
  * Solve the required initial velocity

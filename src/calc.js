@@ -87,7 +87,7 @@ ResultItem.prototype.render = function(root){
     del.addEventListener('click', function(){
         confirm('是否删除？', function(){
             result.removeChild(elem);
-            removeResultData(cela.dataId);
+            cela.dataId !== null && removeResultData(cela.dataId);
         });
     });
     btn.addEventListener('click', function(){
