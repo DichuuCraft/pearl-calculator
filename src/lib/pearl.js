@@ -181,7 +181,7 @@ TNTLauncher.prototype.getInitialVelocity = function(n1, n2){
 TNTLauncher.prototype.solveInitialVelocity = function(distination, tick){
     var g = this.world.g, k = this.world.k;
     var r = distination.minus(this.pearl.r0).minus(g.multiply(tick / (1 - k)));
-    return r.multiply((1 - k) / (1 - Math.pow(k, tick))).add(g.multiply(1 - k));
+    return r.multiply((1 - k) / (1 - Math.pow(k, tick))).add(g.multiply(1 / (1 - k)));
 }
 /**
  * Solve TNT Amount
